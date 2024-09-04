@@ -1,6 +1,7 @@
 const jsonServer=require('json-server');
 const middleware = jsonServer.defaults();
 const router = jsonServer.router('data.json')
+var passwordHash = require('password-hash');
 
 const app= jsonServer.create();
 
@@ -22,5 +23,6 @@ app.get('/history', (req, res) => {
 });
 
 app.get('/user', (req, res) => {
-    res.json(console.log('user'));
+    console.log(req.body)
 });
+
